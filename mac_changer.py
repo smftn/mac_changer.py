@@ -11,9 +11,9 @@ def input_values():
 	(values, key) = reader.parse_args()
 
 	if not values.interface:
-		reader.error("[-] enter an interface name dummy, --help if u need help.") #error prompt to enter a network interface e.g. eth0/wlan0
+		reader.error("[-] enter an interface name, --help") #error prompt to enter a network interface e.g. eth0/wlan0
 	elif not values.new_mac:
-		reader.error("[-] enter a new MAC address, --help if u need help.") #error prompt to enter a mac/valid mac address formart 00:00:00:00:00:00
+		reader.error("[-] enter a new MAC address, --help") #error prompt to enter a mac/valid mac address formart 00:00:00:00:00:00
 	return values
 
 def change_mac(interface, new_mac):
@@ -24,4 +24,3 @@ def change_mac(interface, new_mac):
 
 values = input_values()
 change_mac(values.interface, values.new_mac)
-
